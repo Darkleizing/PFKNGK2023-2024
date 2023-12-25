@@ -34,7 +34,7 @@ namespace PFKNGK1
             {
                 Имя = FullNameTextBox.Text,
                 Отдел = DepNameTextBox.Text,
-                Должность = PositionTextBox.Text
+                Фамилия = PositionTextBox.Text
             };
 
             // Поиск максимального ID среди существующих сотрудников

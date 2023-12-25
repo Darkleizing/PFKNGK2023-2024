@@ -29,17 +29,25 @@ namespace PFKNGK1
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            // Создание новой категории расходов на основе введенных данных
             var newExpenseCategory = new Виды_расходов
             {
+                ID_категории = GenerateNewExpenseCategoryId(), // Генерация нового уникального ID
                 Название_категории = NameTextBox.Text,
                 Описание = DescriptionTextBox.Text,
                 Предельная_сумма = Convert.ToDecimal(LimitTextBox.Text)
             };
 
-            _dbContext.Виды_расходов.Add(newExpenseCategory); // Добавление новой категории расходов в базу данных
-            _dbContext.SaveChanges(); // Сохранение изменений
-            this.Close(); // Закрытие окна после добавления
+            _dbContext.Виды_расходов.Add(newExpenseCategory);
+            _dbContext.SaveChanges();
+            this.Close();
+        }
+
+        private int GenerateNewExpenseCategoryId()
+        {
+            // Логика для генерации нового уникального ID
+            // Например, можно получить максимальный существующий ID и добавить к нему 1
+            var maxId = _dbContext.Виды_расходов.Max(ec => ec.ID_категории);
+            return maxId + 1;
         }
     }
 }

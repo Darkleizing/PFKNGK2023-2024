@@ -70,6 +70,9 @@
     <Compile Include="AddExpenseWindow.xaml.cs">
       <DependentUpon>AddExpenseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddPurchaseWindow.xaml.cs">
+      <DependentUpon>AddPurchaseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditEmployeeWindow.xaml.cs">
       <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddExpenseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPurchaseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

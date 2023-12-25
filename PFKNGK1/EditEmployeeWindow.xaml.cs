@@ -40,7 +40,7 @@ namespace PFKNGK1
                     ID_Сотрудника = c.ID_сотрудника,
                     ФИО = c.Имя,
                     Отдел = c.Отдел,
-                    Должность = c.Должность,
+                    Должность = c.Фамилия,
                 })
                 .FirstOrDefault();
 
@@ -61,7 +61,7 @@ namespace PFKNGK1
             {
                 employee.Имя = FullNameTextBox.Text;
                 employee.Отдел = DepartmentTextBox.Text;
-                employee.Должность = PositionTextBox.Text;
+                employee.Фамилия = PositionTextBox.Text;
                 _dbContext.SaveChanges(); // Сохранение изменений в базе данных
             }
             this.Close(); // Закрытие окна после сохранения

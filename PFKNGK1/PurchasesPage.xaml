@@ -9,6 +9,19 @@
       Title="PurchasesPage">
 
     <Grid>
-        
+        <DataGrid x:Name="PurchaseDataGrid" AutoGenerateColumns="False" SelectionChanged="PurchaseDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_покупки}"/>
+                <DataGridTextColumn Header="Employee ID" Binding="{Binding Имя_сотрудника}"/>
+                <DataGridTextColumn Header="Expense Category ID" Binding="{Binding Категория_расходов}"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Дата}"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Сумма}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="AddPurchaseButton" Content="Add Purchase" Click="AddPurchaseButton_Click" Margin="423,415,231,0"/>
+            <Button x:Name="DeletePurchaseButton" Content="Delete Purchase" Click="DeletePurchaseButton_Click" Margin="198,415,469,0"/>
+        </StackPanel>
     </Grid>
+    
 </Page>
